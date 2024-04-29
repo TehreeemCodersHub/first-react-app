@@ -1,5 +1,11 @@
 import React, { StrictMode } from "react";
 import ReactDOM from "react-dom/client"; // Correct import statement
+import image1 from "./imgs/funghi.jpg";
+import image2 from "./imgs/focaccia.jpg";
+import image3 from "./imgs/margherita.jpg";
+import image4 from "./imgs/prosciutto.jpg";
+import image5 from "./imgs/salamino.jpg";
+import image6 from "./imgs/spinaci.jpg";
 import "./index.css";
 
 // first-react-app;
@@ -9,42 +15,44 @@ const pizzaData = [
     name: "Focaccia",
     ingredients: "Bread with italian olive oil and rosemary",
     price: 6,
-    photoName: "pizzas/focaccia.jpg",
+    photoName: image1, // Correct path'",
     soldOut: false,
   },
   {
     name: "Pizza Margherita",
     ingredients: "Tomato and mozarella",
     price: 10,
-    photoName: "pizzas/margherita.jpg",
+    photoName: image2,
     soldOut: false,
   },
   {
     name: "Pizza Spinaci",
     ingredients: "Tomato, mozarella, spinach, and ricotta cheese",
     price: 12,
-    photoName: "pizzas/spinaci.jpg",
+    photoName: image3,
     soldOut: false,
   },
   {
     name: "Pizza Funghi",
     ingredients: "Tomato, mozarella, mushrooms, and onion",
     price: 12,
-    photoName: "pizzas/funghi.jpg",
+    // photoName: "pizzas/funghi.jpg",
+    photoName: image4,
+
     soldOut: false,
   },
   {
     name: "Pizza Salamino",
     ingredients: "Tomato, mozarella, and pepperoni",
     price: 15,
-    photoName: "pizzas/salamino.jpg",
+    photoName: image5,
     soldOut: true,
   },
   {
     name: "Pizza Prosciutto",
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
     price: 18,
-    photoName: "pizzas/prosciutto.jpg",
+    photoName: image6,
     soldOut: false,
   },
 ];
@@ -77,6 +85,8 @@ function Menu() {
   return (
     <main className="menu">
       <h2>Our Menu</h2>
+
+      {/* <img src={image} alt="pizza" /> */}
 
       {/* 3rdway to do that */}
       {/* we only want to render this list if we have pizza in menu  */}
@@ -141,6 +151,7 @@ function Pizza({ pizzaobj }) {
   return (
     <li className={`pizza ${pizzaobj.soldOut ? "sold-out" : ""}`}>
       <img src={pizzaobj.photoName} alt="pizza" />
+
       <div>
         <h3>{pizzaobj.name}</h3>
         <p>{pizzaobj.ingredients}</p>
